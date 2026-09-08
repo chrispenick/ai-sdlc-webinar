@@ -1,0 +1,72 @@
+name: AI Code Review
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  ai-review:
+    name: AI PR Review
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Get changed files
+        id: diff
+        run: |
+          git diff origin/${{ github.base_ref }}...HEAD -- '*.py' > /tmp/pr.diff
+          echo "diff_size=$(wc -c < /tmp/pr.diff)" >> $GITHUB_OUTPUT
+
+      - name: Skip if no Python changes
+        if: steps.diff.outputs.diff_size == '0'
+        run: echo "No Python changes — skipping AI review." && exit 0
+
+      - name: Run AI review
+        if: steps.diff.outputs.diff_size != '0'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          REPO: ${{ github.repository }}
+        run: |
+          pip install anthropic --quiet
+
+          python - <<'EOF'
+          import os, anthropic, subprocess
+
+          diff = open("/tmp/pr.diff").read()
+          if not diff.strip():
+              print("Empty diff — nothing to review.")
+              exit(0)
+
+          client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+
+          response = client.messages.create(
+              model="claude-haiku-4-5-20251001",
+              max_tokens=1024,
+              system=(
+                  "You are a code reviewer. Review the following Python diff for: "
+                  "correctness bugs, security issues (injection, secret exposure, unsafe eval), "
+                  "and obvious inefficiencies. Be concise. Format as a markdown list. "
+                  "If there are no issues, say so clearly."
+              ),
+              messages=[{"role": "user", "content": f"```diff\n{diff[:8000]}\n```"}],
+          )
+
+          review = response.content[0].text
+          body = f"## AI Code Review\n\n{review}\n\n_Reviewed by claude-haiku-4-5 — human review still required._"
+
+          # Post as a PR comment
+          subprocess.run([
+              "gh", "pr", "comment", os.environ["PR_NUMBER"],
+              "--repo", os.environ["REPO"],
+              "--body", body,
+          ], check=True)
+          print("Review posted.")
+          EOF

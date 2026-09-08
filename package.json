@@ -1,0 +1,11 @@
+{
+  "name": "ai-sdlc-webinar",
+  "version": "1.0.0",
+  "scripts": {
+    "slides": "reveal-md slides/deck.md --watch --theme solarized",
+    "build-slides": "reveal-md slides/deck.md --static _site"
+  },
+  "devDependencies": {
+    "reveal-md": "^6.1.4"
+  }
+}

@@ -40,7 +40,7 @@ revealOptions:
 
 # Part 1
 
-## From Copilot to Autonomous Agent
+## From GitHub Copilot to Autonomous Agent
 
 ---
 
@@ -400,7 +400,7 @@ If a developer doesn't understand the code AI wrote:
 
 ## For Individual Developers
 
-- Learn one AI coding tool deeply (Claude Code, Copilot, Cursor)
+- Learn one AI coding tool deeply (Claude Code, GitHub Copilot, Cursor)
 - Practice reading AI-generated code critically
 - Develop a personal "AI review checklist"
 

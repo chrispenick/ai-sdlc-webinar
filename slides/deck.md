@@ -1,6 +1,6 @@
 ---
 title: AI and the Software Development Lifecycle
-theme: solarized
+theme: dracula
 highlightTheme: github
 revealOptions:
   transition: slide
@@ -204,13 +204,21 @@ Planner → Coder → Reviewer
 ```
 
 - Each agent gets a focused system prompt and scoped context
-- Cheap fast models (Haiku) for planning and review; capable models (Opus) for generation
 - Agents can run in parallel when tasks are independent
+
+<!-- .slide: data-notes="Contrast with Demo 02 — same problem, different architecture. Ask: why not just use one agent for everything?" -->
+
+---
+
+## Why It Matters
+
+- Right model for each role: Haiku for planning and review, Opus for generation
 - A bad plan fails loudly before bad code is written
+- Each agent's context is scoped — the Reviewer never sees the original bug report
 
 > **Live demo:** see `/demos/05-multi-agent/`
 
-<!-- .slide: data-notes="Contrast with Demo 02 — same problem, different architecture. Point out the model choices: Haiku for Planner and Reviewer, Opus for Coder. Ask: why not just use Opus for everything?" -->
+<!-- .slide: data-notes="Point out the model choices printed in the demo output. The Reviewer only sees the code, not the issue — that's intentional scoping." -->
 
 ---
 

@@ -195,6 +195,25 @@ An AI that:
 
 ---
 
+## Multi-Agent Pipelines
+
+One agent does everything. Multi-agent: each specialist does one job.
+
+```
+Planner → Coder → Reviewer
+```
+
+- Each agent gets a focused system prompt and scoped context
+- Cheap fast models (Haiku) for planning and review; capable models (Opus) for generation
+- Agents can run in parallel when tasks are independent
+- A bad plan fails loudly before bad code is written
+
+> **Live demo:** see `/demos/05-multi-agent/`
+
+<!-- .slide: data-notes="Contrast with Demo 02 — same problem, different architecture. Point out the model choices: Haiku for Planner and Reviewer, Opus for Coder. Ask: why not just use Opus for everything?" -->
+
+---
+
 ## Where Teams Are Deploying Agents Today
 
 - **PR agents:** auto-review, auto-fix lint/type errors
@@ -207,7 +226,7 @@ An AI that:
 ## What's Coming (Next 12-18 Months)
 
 - Agents that own whole features from ticket to deploy
-- Multi-agent pipelines (planner → coder → reviewer → deployer)
+- Multi-agent pipelines that span the full delivery cycle
 - AI as a participant in sprint planning
 
 **The bottleneck shifts from writing code to reviewing it**

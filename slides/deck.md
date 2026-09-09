@@ -285,6 +285,28 @@ Planner → Coder → Reviewer
 
 ---
 
+## Demo: Spec-Driven Development with OpenSpec
+
+> **Live demo:** see `/demos/06-openspec/`
+
+<div style="font-size:0.5em;margin-top:0.6em">
+  <div style="display:flex;align-items:center;justify-content:center;gap:8px">
+    <div style="text-align:center;background:#e8e8e8;border-radius:6px;padding:8px 10px;min-width:80px"><strong>Write spec</strong><br><span style="color:#586e75;font-size:0.9em">GIVEN/WHEN/THEN</span></div>
+    <div style="color:#999">→</div>
+    <div style="text-align:center;background:#268bd2;border-radius:6px;padding:8px 10px;min-width:80px;color:white"><strong>Claude</strong><br><span style="font-size:0.9em">reads spec</span></div>
+    <div style="color:#999">→</div>
+    <div style="text-align:center;background:#e8e8e8;border-radius:6px;padding:8px 10px;min-width:80px"><strong>Implementation</strong><br><span style="color:#586e75;font-size:0.9em">derived from spec</span></div>
+    <div style="color:#999">→</div>
+    <div style="text-align:center;background:#859900;border-radius:6px;padding:8px 10px;min-width:80px;color:white"><strong>5/5 pass</strong><br><span style="font-size:0.9em">spec satisfied</span></div>
+  </div>
+</div>
+
+*Agree on what to build before writing any code.*
+
+<!-- .slide: data-notes="OpenSpec: fission-ai/openspec on GitHub. The spec is the contract — not the code review comment. Walk through specs/payment.md first, then run the demo." -->
+
+---
+
 ## What's Coming (Next 12-18 Months)
 
 - Agents that own whole features from ticket to deploy
@@ -455,6 +477,7 @@ If it isn't written, it isn't enforced.
 - [GitHub Copilot](https://github.com/features/copilot): inline AI coding
 - [Anthropic Claude API](https://www.anthropic.com/api): build your own agents
 - [Google ADK](https://google.github.io/adk-docs/): open-source framework for multi-agent apps
+- [OpenSpec](https://github.com/Fission-AI/OpenSpec): spec-driven development for humans and AI
 - [OWASP LLM Top 10](https://owasp.org/www-project-top-10-for-large-language-model-applications/): AI security risk reference
 - [MITRE ATLAS](https://atlas.mitre.org/): adversarial threat landscape for AI systems
 - Demo code: `/demos/` in this repo

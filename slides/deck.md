@@ -11,7 +11,7 @@ revealOptions:
 
 # AI and the Software Development Lifecycle
 
-### What It Means for Your Team — Right Now
+### What It Means for Your Team, Right Now
 
 **Chris Penick** | Ascendient Learning
 
@@ -44,7 +44,7 @@ revealOptions:
 
 ---
 
-## The Copilot Era (2021–2023)
+## The Copilot Era (2021-2023)
 
 - GitHub Copilot, Tabnine, Codeium
 - Autocomplete for developers
@@ -81,9 +81,9 @@ revealOptions:
 
 ## Demo: Claude Code in Action
 
-> **Live demo — see `/demos/01-claude-code/`**
+> **Live demo:** see `/demos/01-claude-code/`
 
-*Claude Code reads an existing codebase, identifies a bug, writes a fix, and runs tests — with no manual hand-holding.*
+*Claude Code reads an existing codebase, identifies a bug, writes a fix, and runs tests. No hand-holding.*
 
 <!-- .slide: data-notes="Switch to terminal. Follow the script in demos/01-claude-code/session.md" -->
 
@@ -121,13 +121,13 @@ revealOptions:
 - Identifies ambiguity and asks clarifying questions
 - Drafts technical specs from user stories
 
-**Risk:** Garbage in, garbage out — AI amplifies vague requirements
+**Risk:** Garbage in, garbage out. AI amplifies vague requirements.
 
 ---
 
 ## Code Generation
 
-- Function-level: 70–90% of simple CRUD is AI-generated
+- Function-level: 70-90% of simple CRUD is AI-generated
 - File-level: AI scaffolds entire modules from a spec
 - Repo-level: agents build features end-to-end
 
@@ -170,16 +170,16 @@ An AI that:
 4. Evaluates output and iterates
 5. Delivers a result
 
-**Not autocomplete — closer to a junior developer you assign a ticket**
+**Not autocomplete. Closer to a junior developer you assign a ticket.**
 
 ---
 
 ## Building Blocks
 
-- **LLM** — reasoning engine
-- **Tools** — what it can do (bash, search, read/write files)
-- **Memory** — context across steps
-- **Guardrails** — what it can't do
+- **LLM:** reasoning engine
+- **Tools:** what it can do (bash, search, read/write files)
+- **Memory:** context across steps
+- **Guardrails:** what it can't do
 
 <!-- .slide: data-notes="Keep this conceptual. The demo will make it concrete." -->
 
@@ -187,7 +187,7 @@ An AI that:
 
 ## Demo: SDLC Agent
 
-> **Live demo — see `/demos/02-agentic-workflow/`**
+> **Live demo:** see `/demos/02-agentic-workflow/`
 
 *A Python agent that takes a GitHub issue, writes a fix, runs the test suite, and opens a draft PR.*
 
@@ -197,20 +197,20 @@ An AI that:
 
 ## Where Teams Are Deploying Agents Today
 
-- **PR agents** — auto-review, auto-fix lint/type errors
-- **Test agents** — fill coverage gaps on demand
-- **Documentation agents** — keep docs in sync with code changes
-- **On-call agents** — triage alerts, suggest runbooks
+- **PR agents:** auto-review, auto-fix lint/type errors
+- **Test agents:** fill coverage gaps on demand
+- **Documentation agents:** keep docs in sync with code changes
+- **On-call agents:** triage alerts, suggest runbooks
 
 ---
 
-## What's Coming (Next 12–18 Months)
+## What's Coming (Next 12-18 Months)
 
 - Agents that own whole features from ticket to deploy
 - Multi-agent pipelines (planner → coder → reviewer → deployer)
 - AI as a participant in sprint planning
 
-**The bottleneck shifts from writing code to reviewing and approving it**
+**The bottleneck shifts from writing code to reviewing it**
 
 ---
 
@@ -233,7 +233,7 @@ AI-generated code:
 
 ## Security Considerations
 
-- AI trained on public code — including vulnerable code
+- AI trained on public code, including vulnerable code
 - Prompt injection in AI coding tools
 - Supply-chain risks when agents can run `pip install`
 - Data exfiltration via AI tools with broad permissions
@@ -292,10 +292,10 @@ If a developer doesn't understand the code AI wrote:
 
 ## Practical Ownership Strategies
 
-- **Read before you merge** — no rubber-stamping AI output
-- **Write the tests first** — you understand the spec better than the AI
-- **Explain it back** — if you can't explain the change, you don't own it
-- **Keep AI out of critical path** initially — earn trust incrementally
+- **Read before you merge:** no rubber-stamping AI output
+- **Write the tests first:** you understand the spec better than the AI
+- **Explain it back:** if you can't explain the change, you don't own it
+- **Keep AI off the critical path** until it's earned trust
 
 ---
 
@@ -328,14 +328,14 @@ If a developer doesn't understand the code AI wrote:
 ## For Engineering Managers
 
 - Define your team's AI policy (what's allowed, what isn't)
-- Add AI-output review to your PR process explicitly
+- Add AI output review to your PR process
 - Track AI tool costs alongside other tooling
 
 ---
 
 ## For Architects and Leads
 
-- Identify which parts of your stack are highest risk for AI errors
+- Identify your stack's highest-risk areas for AI errors
 - Define guardrails before deploying agents (scope, permissions, rollback)
 - Pilot agentic workflows in low-risk areas first
 
@@ -343,7 +343,7 @@ If a developer doesn't understand the code AI wrote:
 
 ## For Technology Leaders
 
-- Treat AI tooling as infrastructure — with procurement, security, and audit requirements
+- Treat AI tooling as infrastructure, with procurement, security, and audit requirements
 - Invest in developer AI literacy, not just tool adoption
 - Build governance before you need it
 
@@ -351,7 +351,7 @@ If a developer doesn't understand the code AI wrote:
 
 ## The One Thing to Do This Week
 
-> **Define what "good AI-assisted code" means on your team — and write it down.**
+> **Define what "good AI-assisted code" means on your team. Write it down.**
 
 A checklist. A policy doc. A one-pager. Something.
 
@@ -362,24 +362,25 @@ If it isn't written, it isn't enforced.
 ## Key Takeaways
 
 - AI is already autonomous enough to change how teams work
-- Value is real — but so are the risks if governance lags
-- Developer ownership and understanding remain non-negotiable
+- Value is real, but so are the risks if governance lags
+- Developer ownership and understanding are not optional
 - Policy and process matter more than any single tool
 
 ---
 
 ## Resources
 
-- [Claude Code](https://claude.ai/code) — agentic coding assistant
-- [GitHub Copilot](https://github.com/features/copilot) — inline AI coding
-- [Anthropic Claude API](https://www.anthropic.com/api) — build your own agents
-- OWASP LLM Top 10 — AI security risk reference
+- [Claude Code](https://claude.ai/code): agentic coding assistant
+- [GitHub Copilot](https://github.com/features/copilot): inline AI coding
+- [Anthropic Claude API](https://www.anthropic.com/api): build your own agents
+- [OWASP LLM Top 10](https://owasp.org/www-project-top-10-for-large-language-model-applications/): AI security risk reference
+- [MITRE ATLAS](https://atlas.mitre.org/): adversarial threat landscape for AI systems
 - Demo code: `/demos/` in this repo
 
 ---
 
 # Q&A
 
-**Bring your questions — that's what we're here for.**
+**Bring your questions.**
 
 Chris Penick | [chris.penick@accenture.com](mailto:chris.penick@accenture.com)

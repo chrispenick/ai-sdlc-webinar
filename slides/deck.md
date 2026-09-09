@@ -454,6 +454,7 @@ If it isn't written, it isn't enforced.
 - [Claude Code](https://claude.ai/code): agentic coding assistant
 - [GitHub Copilot](https://github.com/features/copilot): inline AI coding
 - [Anthropic Claude API](https://www.anthropic.com/api): build your own agents
+- [Google ADK](https://google.github.io/adk-docs/): open-source framework for multi-agent apps
 - [OWASP LLM Top 10](https://owasp.org/www-project-top-10-for-large-language-model-applications/): AI security risk reference
 - [MITRE ATLAS](https://atlas.mitre.org/): adversarial threat landscape for AI systems
 - Demo code: `/demos/` in this repo

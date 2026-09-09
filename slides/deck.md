@@ -83,7 +83,19 @@ revealOptions:
 
 > **Live demo:** see `/demos/01-claude-code/`
 
-*Claude Code reads an existing codebase, identifies a bug, writes a fix, and runs tests. No hand-holding.*
+<div style="display:flex;align-items:flex-start;justify-content:center;gap:6px;font-size:0.52em;margin-top:0.8em">
+  <div style="text-align:center;background:#e8e8e8;border-radius:6px;padding:8px 10px;min-width:78px"><strong>Read</strong><br><span style="color:#586e75;font-size:0.9em">codebase</span></div>
+  <div style="padding-top:12px;color:#999">→</div>
+  <div style="text-align:center;background:#e8e8e8;border-radius:6px;padding:8px 10px;min-width:78px"><strong>Identify</strong><br><span style="color:#586e75;font-size:0.9em">bug</span></div>
+  <div style="padding-top:12px;color:#999">→</div>
+  <div style="text-align:center;background:#e8e8e8;border-radius:6px;padding:8px 10px;min-width:78px"><strong>Write</strong><br><span style="color:#586e75;font-size:0.9em">fix + tests</span></div>
+  <div style="padding-top:12px;color:#999">→</div>
+  <div style="text-align:center;background:#e8e8e8;border-radius:6px;padding:8px 10px;min-width:78px"><strong>Run</strong><br><span style="color:#586e75;font-size:0.9em">test suite</span></div>
+  <div style="padding-top:12px;color:#999">→</div>
+  <div style="text-align:center;background:#6c71c4;border-radius:6px;padding:8px 10px;min-width:78px;color:white"><strong>PR ready</strong><br><span style="font-size:0.9em">to review</span></div>
+</div>
+
+*No hand-holding. Claude reads, reasons, and acts.*
 
 <!-- .slide: data-notes="Switch to terminal. Follow the script in demos/01-claude-code/session.md" -->
 
@@ -141,6 +153,14 @@ revealOptions:
 - Mutation testing and edge-case discovery
 - Test gap analysis against existing coverage
 
+<div style="display:flex;align-items:flex-start;justify-content:center;gap:10px;font-size:0.52em;margin-top:0.6em">
+  <div style="text-align:center;background:#dc322f;border-radius:6px;padding:8px 12px;min-width:90px;color:white"><strong>Weak tests</strong><br><span style="font-size:0.9em">bug passes</span></div>
+  <div style="padding-top:12px;color:#999">→</div>
+  <div style="text-align:center;background:#268bd2;border-radius:6px;padding:8px 12px;min-width:90px;color:white"><strong>AI analysis</strong><br><span style="font-size:0.9em">finds gaps</span></div>
+  <div style="padding-top:12px;color:#999">→</div>
+  <div style="text-align:center;background:#859900;border-radius:6px;padding:8px 12px;min-width:90px;color:white"><strong>Strong tests</strong><br><span style="font-size:0.9em">bug caught</span></div>
+</div>
+
 > Demo: see `/demos/03-before-after/` for AI-generated vs. hand-written test comparison
 
 ---
@@ -150,6 +170,18 @@ revealOptions:
 - PR summary generation (what changed, why it matters)
 - Security and style linting at commit time
 - AI reviewer catches logic errors, not just formatting
+
+<div style="display:flex;align-items:flex-start;justify-content:center;gap:6px;font-size:0.5em;margin-top:0.6em">
+  <div style="text-align:center;background:#e8e8e8;border-radius:6px;padding:8px 8px;min-width:72px"><strong>PR opened</strong><br><span style="color:#586e75;font-size:0.9em">on GitHub</span></div>
+  <div style="padding-top:12px;color:#999">→</div>
+  <div style="text-align:center;background:#e8e8e8;border-radius:6px;padding:8px 8px;min-width:72px"><strong>Actions</strong><br><span style="color:#586e75;font-size:0.9em">triggered</span></div>
+  <div style="padding-top:12px;color:#999">→</div>
+  <div style="text-align:center;background:#268bd2;border-radius:6px;padding:8px 8px;min-width:72px;color:white"><strong>Haiku</strong><br><span style="font-size:0.9em">reviews diff</span></div>
+  <div style="padding-top:12px;color:#999">→</div>
+  <div style="text-align:center;background:#e8e8e8;border-radius:6px;padding:8px 8px;min-width:72px"><strong>Comment</strong><br><span style="color:#586e75;font-size:0.9em">posted on PR</span></div>
+  <div style="padding-top:12px;color:#999">→</div>
+  <div style="text-align:center;background:#e8e8e8;border-radius:6px;padding:8px 8px;min-width:72px"><strong>Human</strong><br><span style="color:#586e75;font-size:0.9em">approves</span></div>
+</div>
 
 > Demo: see `/demos/04-cicd/` for a GitHub Actions AI review workflow
 
@@ -189,7 +221,22 @@ An AI that:
 
 > **Live demo:** see `/demos/02-agentic-workflow/`
 
-*A Python agent that takes a GitHub issue, writes a fix, runs the test suite, and opens a draft PR.*
+<div style="font-size:0.5em;margin-top:0.6em">
+  <div style="display:flex;align-items:center;justify-content:center;gap:8px">
+    <div style="text-align:center;background:#e8e8e8;border-radius:6px;padding:8px 10px;min-width:72px"><strong>Issue</strong><br><span style="color:#586e75;font-size:0.9em">input</span></div>
+    <div style="color:#999">→</div>
+    <div style="text-align:center;background:#268bd2;border-radius:6px;padding:8px 14px;min-width:82px;color:white"><strong>Agent</strong><br><span style="font-size:0.9em">LLM loop</span></div>
+    <div style="color:#999">→</div>
+    <div style="text-align:center;background:#6c71c4;border-radius:6px;padding:8px 10px;min-width:72px;color:white"><strong>PR draft</strong><br><span style="font-size:0.9em">output</span></div>
+  </div>
+  <div style="display:flex;justify-content:center;gap:6px;margin-top:8px">
+    <div style="background:#e8e8e8;border-radius:4px;padding:4px 8px;color:#586e75">read_file</div>
+    <div style="background:#e8e8e8;border-radius:4px;padding:4px 8px;color:#586e75">propose_fix</div>
+    <div style="background:#e8e8e8;border-radius:4px;padding:4px 8px;color:#586e75">generate_tests</div>
+    <div style="background:#e8e8e8;border-radius:4px;padding:4px 8px;color:#586e75">write_pr</div>
+  </div>
+  <div style="text-align:center;color:#777;font-size:0.85em;margin-top:4px">tools the agent calls on each iteration</div>
+</div>
 
 <!-- .slide: data-notes="Walk through sdlc_agent.py. Highlight the tool-call loop in the output." -->
 
@@ -212,7 +259,14 @@ Planner → Coder → Reviewer
 
 ## Why It Matters
 
-- Right model for each role: Haiku for planning and review, Opus for generation
+<div style="display:flex;align-items:flex-start;justify-content:center;gap:10px;font-size:0.52em;margin-top:0.4em;margin-bottom:0.6em">
+  <div style="text-align:center;background:#e8e8e8;border-radius:6px;padding:8px 12px;min-width:90px"><strong>Haiku</strong><br><span style="color:#586e75;font-size:0.9em">Planner</span><br><span style="color:#999;font-size:0.8em">fast + cheap</span></div>
+  <div style="padding-top:14px;color:#999">→</div>
+  <div style="text-align:center;background:#268bd2;border-radius:6px;padding:8px 12px;min-width:90px;color:white"><strong>Opus</strong><br><span style="font-size:0.9em">Coder</span><br><span style="font-size:0.8em;opacity:0.85">most capable</span></div>
+  <div style="padding-top:14px;color:#999">→</div>
+  <div style="text-align:center;background:#e8e8e8;border-radius:6px;padding:8px 12px;min-width:90px"><strong>Haiku</strong><br><span style="color:#586e75;font-size:0.9em">Reviewer</span><br><span style="color:#999;font-size:0.8em">fast + cheap</span></div>
+</div>
+
 - A bad plan fails loudly before bad code is written
 - Each agent's context is scoped — the Reviewer never sees the original bug report
 
